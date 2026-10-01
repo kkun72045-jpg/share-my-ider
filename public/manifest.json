@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "实时演算 · 随行试衣插件",
+  "version": "0.1.0",
+  "description": "浏览商品时一键打开侧边试衣面板，选衣、看实时换装，继续浏览当前网页。",
+  "minimum_chrome_version": "116",
+  "permissions": ["contextMenus", "storage", "sidePanel", "activeTab", "scripting"],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "action": { "default_title": "打开实时演算侧边面板" },
+  "side_panel": { "default_path": "panel.html" },
+  "background": { "service_worker": "assets/background.js", "type": "module" },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; worker-src 'self'; connect-src 'self' http: https: wss:; img-src 'self' blob: data:; media-src 'self' blob:; style-src 'self';"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "realtime-fitting-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "实时演算：原创实时 AI 试衣浏览器扩展",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && node scripts/notices.mjs && node scripts/mobile-build.mjs",
+    "test": "node --experimental-strip-types --test server/*.test.mjs tests/*.test.mjs",
+    "broker": "node --env-file-if-exists=.env server/index.mjs",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@decartai/sdk": "0.2.3",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.3.4",
+    "typescript": "5.9.3",
+    "vite": "7.3.6"
+  }
+}

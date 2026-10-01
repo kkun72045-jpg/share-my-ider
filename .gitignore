@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-mobile-firefox/
+dist-mobile-safari/
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+playwright-report/
+test-results/
+.local/
